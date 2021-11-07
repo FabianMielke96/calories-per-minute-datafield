@@ -1,6 +1,6 @@
 <strings>
     <string id="cal_per_minute_graph_title">Calories per Minute</string>
-    <string id="cal_per_minute_data_label">Calories per Minute</string>
+    <string id="cal_per_minute_data_label">calories_per_minute</string>
     <string id="cal_per_minute_unit_label">kcal./min.</string>
-    <string id="data_field_label">Kalorien pro Minute</string>
+    <string id="ui_label">Kalorien pro Minute</string>
 </strings>

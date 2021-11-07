@@ -15,7 +15,7 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField
     function initialize() 
 	{
         SimpleDataField.initialize();
-        label = WatchUi.loadResource( Rez.Strings.data_field_label );
+        label = WatchUi.loadResource( Rez.Strings.ui_label );
         
         lastTime = 0.0f;
         lastCalories = 0.0f;
@@ -72,7 +72,7 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField
        		lastTime = info.timerTime;
        		lastCalories = info.calories;
        		lastCaloriesPerMinute = currentCaloriesPerMinute;
-    		calPerMinuteField.setData(currentCaloriesPerMinute);
+    		calPerMinuteField.setData(currentCaloriesPerMinute.toFloat());
        		System.println("DEBUG: Set datafield in FIT file: " + currentCaloriesPerMinute);
        		return currentCaloriesPerMinute;
         } else {
@@ -82,6 +82,11 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField
 
 	function calculateCaloryDifference( currentCalories, lastCalories ) 
 	{
+		if (currentCalories == lastCalories)
+		{
+			return 0.0f;
+		}
+
 		var caloryDifference = currentCalories.toFloat() - lastCalories.toFloat();
 		System.println("DEBUG: caloryDifference = " + caloryDifference);
 		return caloryDifference;
@@ -89,6 +94,11 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField
 
 	function calculateTimeDifferenceAsMinutes( currentTimestamp, lastTimestamp )
 	{
+		if (currentTimestamp == lastTimestamp)
+		{
+			return 0.0f;
+		}
+
 		var deltaTime = currentTimestamp.toFloat() - lastTimestamp.toFloat();
 		var deltaTimeMinutes = deltaTime.toFloat() / 60000f;
        	System.println("DEBUG: deltaTimeMinutes: " + deltaTimeMinutes);

@@ -7,5 +7,5 @@
 		chartTitle="@Strings.cal_per_minute_graph_title"    
 		dataLabel="@Strings.cal_per_minute_data_label" 
 		unitLabel="@Strings.cal_per_minute_unit_label"    
-		fillColor="#FF0000" />
+		fillColor="#FC5A03" />
 </fitContributions>
