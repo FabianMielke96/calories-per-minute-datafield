@@ -20,7 +20,7 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField
         lastTime = 0.0f;
         lastCalories = 0.0f;
         lastCaloriesPerMinute = 0.0f;
-        calculationTimeStep = 5000.0f; // 5 seconds
+        calculationTimeStep = 20000.0f; // 20 seconds
         
         calPerMinuteField = createField("calories_per_minute",
 			CALORYPERMINUTE_FIELD_ID,
