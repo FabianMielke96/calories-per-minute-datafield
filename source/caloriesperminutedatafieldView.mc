@@ -7,10 +7,10 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
 	const CALORYPERMINUTE_FIELD_ID = 0;
 	
     var calPerMinuteField;
-    hidden var lastElapsedTime;
-    hidden var lastCaloryValue;
+    hidden var lastTime;
+    hidden var lastCalories;
     hidden var lastCaloriesPerMinute;
-    hidden var frequency;
+    hidden var calculationTimeStep;
     
     
     // Set the label of the data field here.
@@ -18,10 +18,10 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
         SimpleDataField.initialize();
         label = WatchUi.loadResource( Rez.Strings.data_field_label );
         
-        lastElapsedTime = 0.0f;
-        lastCaloryValue = 0.0f;
+        lastTime = 0.0f;
+        lastCalories = 0.0f;
         lastCaloriesPerMinute = 0.0f;
-        frequency = 10000.0f;
+        calculationTimeStep = 10000.0f;
         
         calPerMinuteField = createField("calories_per_minute",
 			CALORYPERMINUTE_FIELD_ID,
@@ -36,36 +36,52 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
     // information. Calculate a value and return it in this method.
     // Note that compute() and onUpdate() are asynchronous, and there is no
     // guarantee that compute() will be called before onUpdate().
-    function compute(info) {
-        // ELAPSED TIME MAY BE WRONG? TOO MUCH CALORIES?
-        
-        if (info has :elapsedTime && info has :calories)
+    function compute(info) 
+	{
+		if (info == null)
+		{
+			return lastCaloriesPerMinute;
+		}
+
+        if (info has :timerTime && info has :calories && info has:timerState)
         {
-        	if (info.elapsedTime == null || info.calories == null)
+			if (info.timerState == null)
+			{
+				return lastCaloriesPerMinute;
+			}
+
+			if (info.timerTime == null)
         	{
         		return lastCaloriesPerMinute;
         	}
-        	
-        	if (info.elapsedTime >= lastElapsedTime + frequency)
-       		{
-				var deltaCalories = calculateCaloryDifference( info.calories, lastCaloryValue);
 
-				var deltaTimeMinutes = calculateTimeDifferenceAsMinutes ( info.elapsedTime, lastElapsedTime );
+			if (info.calories == null)
+			{
+				return lastCaloriesPerMinute;
+			}
+
+			if (info.timerState != 3)
+			{
+				return lastCaloriesPerMinute;
+			}
+
+			if (info.timerTime < lastTime + calculationTimeStep)
+			{
+				return lastCaloriesPerMinute;
+			}
+        	
+        	
+			var deltaCalories = calculateCaloryDifference( info.calories, lastCalories);
+			var deltaTimeMinutes = calculateTimeDifferenceAsMinutes ( info.timerTime, lastTime );
+    		var currentCaloriesPerMinute = calculateCaloriesPerMinute ( deltaCalories, deltaTimeMinutes );
        		
-       			var currentCaloriesPerMinute = calculateCaloriesPerMinute ( deltaCalories, deltaTimeMinutes );
+       		lastTime = info.timerTime;
+       		lastCalories = info.calories;
+       		lastCaloriesPerMinute = currentCaloriesPerMinute;
+    		calPerMinuteField.setData(currentCaloriesPerMinute);
+       		System.println("DEBUG: Set datafield in FIT file:" + currentCaloriesPerMinute);
+       		return currentCaloriesPerMinute;
        		
-       			lastElapsedTime = info.elapsedTime;
-       			lastCaloryValue = info.calories;
-       			lastCaloriesPerMinute = currentCaloriesPerMinute;
-       		
-       			calPerMinuteField.setData(currentCaloriesPerMinute);
-       			System.println("Field object:" + calPerMinuteField);
-       			return currentCaloriesPerMinute;
-       		}
-       		else {
-       			calPerMinuteField.setData(lastCaloriesPerMinute);
-       			return lastCaloriesPerMinute;
-       		}
         } else {
         	return lastCaloriesPerMinute;
         }
@@ -80,7 +96,7 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
 
 	function calculateTimeDifferenceAsMinutes( currentTimestamp, lastTimestamp )
 	{
-		var deltaTime = info.elapsedTime.toFloat() - lastElapsedTime.toFloat();
+		var deltaTime = currentTimestamp.toFloat() - lastTimestamp.toFloat();
 		var deltaTimeMinutes = deltaTime.toFloat() / 60000f;
        	System.println("DEBUG: deltaTimeMinutes: " + deltaTimeMinutes);
 		return deltaTimeMinutes;
@@ -88,6 +104,26 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
 
 	function calculateCaloriesPerMinute ( calories, minutes )
 	{
+		if (calories == null)
+		{
+			return 0.0f;
+		}
+
+		if (calories == 0)
+		{
+			return 0.0f;
+		}
+
+		if (minutes == null)
+		{
+			return 0.0f;
+		}
+
+		if (minutes == 0)
+		{
+			return 0.0f;
+		}
+
 		var calPerMinutes = calories.toFloat() / minutes.toFloat();
 		System.println("DEBUG: calPerMinutes: " + calPerMinutes);
 		return calPerMinutes;
