@@ -1,0 +1,11 @@
+<fitContributions>    
+	<fitField 
+		id="0" 
+		displayInChart="true" 
+		sortOrder = "0"    
+		precision="2" 
+		chartTitle="@Strings.cal_per_minute_graph_title"    
+		dataLabel="@Strings.cal_per_minute_data_label" 
+		unitLabel="@Strings.cal_per_minute_unit_label"    
+		fillColor="#FF0000" />
+</fitContributions>
