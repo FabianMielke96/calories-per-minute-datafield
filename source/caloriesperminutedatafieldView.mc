@@ -2,8 +2,8 @@ using Toybox.WatchUi;
 using Toybox.Activity;
 using Toybox.FitContributor as Fit;
 
-class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
-
+class caloriesperminutedatafieldView extends WatchUi.SimpleDataField 
+{
 	const CALORYPERMINUTE_FIELD_ID = 0;
 	
     var calPerMinuteField;
@@ -12,16 +12,15 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
     hidden var lastCaloriesPerMinute;
     hidden var calculationTimeStep;
     
-    
-    // Set the label of the data field here.
-    function initialize() {
+    function initialize() 
+	{
         SimpleDataField.initialize();
         label = WatchUi.loadResource( Rez.Strings.data_field_label );
         
         lastTime = 0.0f;
         lastCalories = 0.0f;
         lastCaloriesPerMinute = 0.0f;
-        calculationTimeStep = 10000.0f;
+        calculationTimeStep = 5000.0f; // 5 seconds
         
         calPerMinuteField = createField("calories_per_minute",
 			CALORYPERMINUTE_FIELD_ID,
@@ -32,10 +31,6 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
 			});
     }
 
-    // The given info object contains all the current workout
-    // information. Calculate a value and return it in this method.
-    // Note that compute() and onUpdate() are asynchronous, and there is no
-    // guarantee that compute() will be called before onUpdate().
     function compute(info) 
 	{
 		if (info == null)
@@ -70,7 +65,6 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
 				return lastCaloriesPerMinute;
 			}
         	
-        	
 			var deltaCalories = calculateCaloryDifference( info.calories, lastCalories);
 			var deltaTimeMinutes = calculateTimeDifferenceAsMinutes ( info.timerTime, lastTime );
     		var currentCaloriesPerMinute = calculateCaloriesPerMinute ( deltaCalories, deltaTimeMinutes );
@@ -79,9 +73,8 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
        		lastCalories = info.calories;
        		lastCaloriesPerMinute = currentCaloriesPerMinute;
     		calPerMinuteField.setData(currentCaloriesPerMinute);
-       		System.println("DEBUG: Set datafield in FIT file:" + currentCaloriesPerMinute);
+       		System.println("DEBUG: Set datafield in FIT file: " + currentCaloriesPerMinute);
        		return currentCaloriesPerMinute;
-       		
         } else {
         	return lastCaloriesPerMinute;
         }
