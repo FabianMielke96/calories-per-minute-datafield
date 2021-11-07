@@ -48,19 +48,11 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
         	
         	if (info.elapsedTime >= lastElapsedTime + frequency)
        		{
-       			// var deltaCalories = info.calories.toFloat() - lastCaloryValue;
-       			// System.println("deltaCalories: " + deltaCalories);
-
 				var deltaCalories = calculateCaloryDifference( info.calories, lastCaloryValue);
+
+				var deltaTimeMinutes = calculateTimeDifferenceAsMinutes ( info.elapsedTime, lastElapsedTime );
        		
-       			var deltaTime = info.elapsedTime.toFloat() - lastElapsedTime;
-       			System.println("deltaTime: " + deltaTime);
-       		
-       			var deltaTimeMinutes = deltaTime.toFloat() / 60000;
-       			System.println("deltaTimeMinutes: " + deltaTimeMinutes);
-       		
-       			var currentCaloriesPerMinute = deltaCalories.toFloat() / deltaTimeMinutes.toFloat();
-       			System.println("currentCaloriesPerMinute: " + currentCaloriesPerMinute);
+       			var currentCaloriesPerMinute = calculateCaloriesPerMinute ( deltaCalories, deltaTimeMinutes );
        		
        			lastElapsedTime = info.elapsedTime;
        			lastCaloryValue = info.calories;
@@ -84,5 +76,20 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField {
 		var caloryDifference = currentCalories.toFloat() - lastCalories.toFloat();
 		System.println("DEBUG: caloryDifference = " + caloryDifference);
 		return caloryDifference;
+	}
+
+	function calculateTimeDifferenceAsMinutes( currentTimestamp, lastTimestamp )
+	{
+		var deltaTime = info.elapsedTime.toFloat() - lastElapsedTime.toFloat();
+		var deltaTimeMinutes = deltaTime.toFloat() / 60000f;
+       	System.println("DEBUG: deltaTimeMinutes: " + deltaTimeMinutes);
+		return deltaTimeMinutes;
+	}
+
+	function calculateCaloriesPerMinute ( calories, minutes )
+	{
+		var calPerMinutes = calories.toFloat() / minutes.toFloat();
+		System.println("DEBUG: calPerMinutes: " + calPerMinutes);
+		return calPerMinutes;
 	}
 }
