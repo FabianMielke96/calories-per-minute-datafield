@@ -14,7 +14,6 @@
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -32,33 +31,87 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="2.9469416"
-     inkscape:cx="116.73119"
-     inkscape:cy="76.011007"
+     inkscape:zoom="3.669949"
+     inkscape:cx="53.951703"
+     inkscape:cy="95.641656"
      inkscape:window-width="1920"
      inkscape:window-height="1010"
      inkscape:window-x="-7"
      inkscape:window-y="-7"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
+     inkscape:current-layer="layer2">
     <inkscape:grid
        type="xygrid"
        id="grid20" />
   </sodipodi:namedview>
   <defs
      id="defs9">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient14502">
-      <stop
-         style="stop-color:#ffa800;stop-opacity:1;"
-         offset="0"
-         id="stop14498" />
-      <stop
-         style="stop-color:#ffa800;stop-opacity:0;"
-         offset="1"
-         id="stop14500" />
-    </linearGradient>
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect8374"
+       is_visible="true"
+       lpeversion="1"
+       steps="1"
+       threshold="0.00243902"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect2167"
+       is_visible="true"
+       lpeversion="1"
+       steps="1"
+       threshold="0.00243902"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect1460"
+       is_visible="true"
+       lpeversion="1"
+       steps="1"
+       threshold="0.00243902"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect806"
+       is_visible="true"
+       lpeversion="1"
+       steps="1"
+       threshold="0.00243902"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect736"
+       is_visible="true"
+       lpeversion="1"
+       steps="1"
+       threshold="0.00243902"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect665"
+       is_visible="true"
+       lpeversion="1"
+       steps="1"
+       threshold="0.00243902"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
     <rect
        x="100"
        y="70"
@@ -71,48 +124,73 @@
        width="150"
        height="55"
        id="rect2973" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient14502"
-       id="linearGradient14504"
-       x1="-5e-07"
-       y1="100"
-       x2="200"
-       y2="100"
-       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <text
-       xml:space="preserve"
-       id="text2971"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.05;font-family:'Nirmala UI';-inkscape-font-specification:'Nirmala UI';white-space:pre;shape-inside:url(#rect2973)"
-       x="79.23838"
-       y="0"
-       transform="translate(8.1440364,23.414105)"><tspan
-         x="25.325433"
-         y="71.353478"
-         id="tspan15440"><tspan
-           style="text-align:center;text-anchor:middle"
-           id="tspan15438">Calories per </tspan></tspan><tspan
-         x="53.32026"
-         y="99.353508"
-         id="tspan15444"><tspan
-           style="text-align:center;text-anchor:middle"
-           id="tspan15442">Minute</tspan></tspan></text>
+     id="layer1"
+     style="display:inline">
     <text
        xml:space="preserve"
        id="text10331"
-       style="line-height:1.25;font-family:sans-serif;font-size:6.66666667px;white-space:pre;shape-inside:url(#rect10333)" />
+       style="font-size:6.66667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect10333)" />
     <rect
-       style="fill:url(#linearGradient14504);stroke:#ff5900;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1;stroke-opacity:1"
-       id="rect13521"
+       style="fill:#444444;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;stroke-opacity:1;fill-opacity:1"
+       id="rect352"
        width="200"
        height="200"
        x="0"
        y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Ebene 2"
+     style="display:inline">
+    <circle
+       id="path523"
+       style="fill:#000000;stroke:#ff5900"
+       cx="65.15229"
+       cy="163.22008"
+       r="0" />
+    <circle
+       id="path525"
+       style="fill:#000000;stroke:#ff5900"
+       cx="65.15229"
+       cy="163.22008"
+       r="0" />
+    <path
+       style="fill:#cf455c;stroke:#a8384a;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 70,200 C 51.207533,183.5072 34.087745,160.57919 35.785896,134.30464 37.65898,105.32344 56.058468,81.561659 69.444098,56.971283 77.629066,41.934901 91.861856,-7.0434928 89.625944,9.9038026 88.371279,19.413647 98.32598,27.31972 105.36552,32.734985 c 17.42713,13.406065 35.23837,29.782992 39.5126,52.411855 4.98559,26.39497 -7.83836,51.37513 -16.68755,75.44134 C 123.55727,173.18888 119.31786,186.40327 120,200"
+       id="path804"
+       inkscape:path-effect="#path-effect806"
+       inkscape:original-d="M 70,200 C -0.35821417,137.02112 56.306871,91.467447 75,45 76.12501,42.144205 88.677393,7.221461 90,10 c -5,10 24.56796,29.020881 30,35 59.83122,53.879319 -2.58261,106.62846 0,155"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Ebene 3"
+     style="display:inline">
+    <path
+       style="display:inline;fill:#ff8a5c;stroke:#fb7541;stroke-width:0.693711px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 80,200.02219 C 66.573776,186.25639 56.414007,167.5323 58.358417,147.7079 60.886982,121.92769 76.796076,100.71059 85.204258,76.724 c 2.351245,-6.707557 8.251012,-27.146985 7.317414,-20.085543 -0.899212,6.801357 5.235286,12.908425 10.042098,17.220861 11.7291,10.522773 22.59428,23.440469 25.20969,39.532652 4.86979,29.96297 -15.99525,56.2654 -15.90373,85.7745 0,0 0.0311,0.85572 0.0311,0.85572"
+       id="path804-4"
+       inkscape:path-effect="#path-effect2167"
+       inkscape:original-d="m 80,200.02219 c -44.889686,-47.50304 -8.736439,-81.86278 3.190082,-116.911747 0.717774,-2.154039 8.726397,-28.495194 9.570244,-26.399427 -3.190082,7.542693 15.674754,21.889561 19.140484,26.399427 38.1733,40.639517 -1.64775,80.426577 0,116.911747"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Ebene 4">
+    <path
+       style="display:inline;fill:#ffdd67;fill-opacity:1;stroke:#fbd346;stroke-width:0.363895px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 89.982007,200.00569 c -7.717033,-9.58086 -11.964262,-22.19706 -9.741069,-34.57005 2.479804,-13.80114 8.832024,-26.30336 12.920098,-39.71245 0.570046,-1.86978 2.496124,-9.54434 2.705186,-8.03111 0.916878,6.63653 6.682428,10.99429 10.452058,16.11522 6.96332,9.45945 7.53815,21.91229 5.28141,33.17457 -2.20148,10.98648 -6.7841,21.65302 -6.4937,33.02382"
+       id="path804-4-7"
+       inkscape:path-effect="#path-effect8374"
+       inkscape:original-d="m 89.982007,200.00569 c -21.281927,-27.57095 -4.141893,-47.51348 1.512398,-67.85604 0.340292,-1.25021 4.137132,-16.53872 4.537194,-15.32233 -1.512398,4.37781 7.431301,12.70479 9.074391,15.32233 18.09773,23.58734 -0.78119,46.67991 0,67.85604"
+       sodipodi:nodetypes="ccccc" />
   </g>
   <metadata
      id="metadata15390">
