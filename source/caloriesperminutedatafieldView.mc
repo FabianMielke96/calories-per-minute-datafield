@@ -88,7 +88,7 @@ class caloriesperminutedatafieldView extends WatchUi.SimpleDataField
 		}
 
 		var caloryDifference = currentCalories.toFloat() - lastCalories.toFloat();
-		System.println("DEBUG: caloryDifference = " + caloryDifference);
+		System.println("DEBUG: caloryDifference: " + caloryDifference);
 		return caloryDifference;
 	}
 
