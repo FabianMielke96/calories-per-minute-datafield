@@ -11,7 +11,6 @@
             <iq:product id="fenix6xpro"/>
         </iq:products>
         <iq:permissions>
-            <iq:uses-permission id="Background"/>
             <iq:uses-permission id="DataFieldAlert"/>
             <iq:uses-permission id="FitContributor"/>
             <iq:uses-permission id="Sensor"/>
